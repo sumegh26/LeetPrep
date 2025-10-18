@@ -8,3 +8,4 @@ class Solution:
                 return index, diff_map[diff]
                 
             diff_map[value] = index
+            
