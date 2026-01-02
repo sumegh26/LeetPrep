@@ -6,12 +6,9 @@ class Solution:
         # return xor
         HashMap = {}
         for i in nums:
-            if i not in HashMap:
-                HashMap[i] = 1
-            else:
-                HashMap[i] = 2
-        for j in range(len(nums)):
-            if HashMap[nums[j]]!=2:
-                return nums[j]
+            HashMap[i] = HashMap.get(i,0)+1
+        for key,value in HashMap.items():
+            if value==1:
+                return key
 
         
