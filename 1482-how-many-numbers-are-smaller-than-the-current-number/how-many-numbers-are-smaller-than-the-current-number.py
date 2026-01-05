@@ -8,15 +8,17 @@ class Solution:
         #             cnt += 1
         #     result.append(cnt)
         # return result
-        sortedNums = sorted(nums)
-        mappr = {}
-        for index,value in enumerate(sortedNums):
-            if value not in mappr:
-                mappr[value] = index
-        ret = []
+        result = []
+        mapp = {}
+        sorted_nums = sorted(nums)
+        for i in range(len(sorted_nums)):
+            if sorted_nums[i] not in mapp:
+                mapp[sorted_nums[i]] = i
         for i in nums:
-            ret.append(mappr[i])
-        return ret
+            result.append(mapp.get(i))
+        return result
+
+
                 
             
 
