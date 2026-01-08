@@ -5,10 +5,7 @@ class Solution:
         keyy = float('-inf')
         for i in nums:
             maj_map[i] = maj_map.get(i,0) + 1
-        for index,values in maj_map.items():
-            if values>max_ele:
-                max_ele = values
-                keyy = index
+        d = max(maj_map,key=maj_map.get)
 
-        return keyy
+        return d
         
