@@ -1,11 +1,12 @@
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:
-        maj_map = {}
-        max_ele = float('-inf')
-        keyy = float('-inf')
-        for i in nums:
-            maj_map[i] = maj_map.get(i,0) + 1
-        d = max(maj_map,key=maj_map.get)
+        count = {}
+        res,maxCount = 0,0
 
-        return d
+        for n in nums:
+            count[n] = 1 + count.get(n,0)
+            res = n if count[n] > maxCount else res
+            maxCount = max(count[n], maxCount)
+
+        return res
         
