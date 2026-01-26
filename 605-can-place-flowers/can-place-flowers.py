@@ -9,7 +9,7 @@ class Solution(object):
         length = len(flowerbed)
         for i in range(length):
             if flowerbed[i]==0 and (i==0 or flowerbed[i-1]==0) and (i==length-1 or flowerbed[i+1]==0):
-                count +=1
+                count += 1
                 flowerbed[i] = 1
             if count >= n:
                 return True
